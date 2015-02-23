@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'package/get_by_version'
+
   get 'virus/index'
 
   devise_for :users

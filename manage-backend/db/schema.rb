@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131133604) do
+ActiveRecord::Schema.define(version: 20150223141453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "packages", force: true do |t|
+    t.integer  "version"
+    t.string   "url"
+    t.string   "des"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,5 +41,22 @@ ActiveRecord::Schema.define(version: 20150131133604) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "viri", force: true do |t|
+    t.string   "collected_gmt"
+    t.integer  "upstream_id"
+    t.string   "en_name"
+    t.string   "family_name"
+    t.string   "cn_name"
+    t.string   "found_gmt"
+    t.text     "family_cn_des"
+    t.text     "family_en_des"
+    t.text     "action_des"
+    t.string   "pic_url"
+    t.integer  "platform"
+    t.integer  "virus_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
