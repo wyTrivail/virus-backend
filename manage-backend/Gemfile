@@ -46,3 +46,9 @@ gem 'web-app-theme'
 
 #excel
 gem 'roo'
+
+#admin system
+gem 'rails_admin'
+
+#file upload
+gem 'carrierwave'

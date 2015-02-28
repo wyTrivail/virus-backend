@@ -10,9 +10,9 @@ class CreateViri < ActiveRecord::Migration
       t.text :family_cn_des
       t.text :family_en_des
       t.text :action_des
-      t.string :pic_url
+      t.string :avatar
       t.integer :platform
-      t.integer :type
+      t.integer :virus_type
 
       t.timestamps
     end
