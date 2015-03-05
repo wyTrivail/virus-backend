@@ -1,5 +1,7 @@
+require Rails.root.join('lib','rails_admin_generate_version')
+require Rails.root.join('lib','rails_admin_bulk_generate_version')
 RailsAdmin.config do |config|
-
+    
   ### Popular gems integration
 
   ## == Devise ==
@@ -15,6 +17,24 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
+  #module RailsAdmin
+    #module Config
+        #module Actions
+            #class GenerateVersion < RailsAdmin::Config::Actions::Base
+                #RailsAdmin::Config::Actions.register(self)
+            #end
+        #end
+    #end
+  #end
+  module RailsAdmin
+    module Config
+        module Actions
+            class BulkGenerateVersion < RailsAdmin::Config::Actions::Base
+                RailsAdmin::Config::Actions.register(self)
+            end
+        end
+    end
+  end
 
   config.actions do
     dashboard                     # mandatory
@@ -26,7 +46,17 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+    generate_version do 
+        visible do
+            bindings[:abstract_model].model.to_s == "Virus"
+        end
+    end
 
+    bulk_generate_version do
+        visible do
+            bindings[:abstract_mode].mode.to_s == "Virus"
+        end
+    end
     ## With an audit adapter, you can add:
     # history_index
     # history_show

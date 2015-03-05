@@ -1,0 +1,12 @@
+%h4
+  = t("确定发布全量数据包吗，全量数据包将替换客户端的所有数据！", model_name: @abstract_model.pretty_name.downcase)
+
+= form_tag('/admin/virus/generate_version', method: 'post') do
+  %input{type: :hidden, name: 'return_to', value: (params[:return_to].presence || request.referer)}
+  .form-actions
+    %button.btn.btn-danger{type: "submit", :'data-disable-with' => t("admin.form.confirmation")}
+      %i.icon-white.icon-ok
+      = t("admin.form.confirmation")
+    %button.btn{type: "cancel", name: "_continue", :'data-disable-with' => t("admin.form.cancel")}
+      %i.icon-remove
+      = t("admin.form.cancel")

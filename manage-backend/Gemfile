@@ -52,3 +52,9 @@ gem 'rails_admin'
 
 #file upload
 gem 'carrierwave'
+
+#haml
+gem 'haml'
+
+#haml rails
+gem 'haml-rails'
