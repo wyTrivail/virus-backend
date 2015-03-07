@@ -1,3 +1,4 @@
+#encoding: utf-8
 require Rails.root.join('lib','rails_admin_generate_version')
 require Rails.root.join('lib','rails_admin_bulk_generate_version')
 RailsAdmin.config do |config|

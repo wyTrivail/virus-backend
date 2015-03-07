@@ -1,3 +1,4 @@
+#encoding utf-8
 class CreatePackages < ActiveRecord::Migration
   def change
     create_table :packages do |t|

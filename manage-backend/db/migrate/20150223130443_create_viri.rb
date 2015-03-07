@@ -1,3 +1,4 @@
+#encoding utf-8
 class CreateViri < ActiveRecord::Migration
   def change
     create_table :viri do |t|

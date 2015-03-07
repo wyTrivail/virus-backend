@@ -1,4 +1,4 @@
-
+#encoding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -9,7 +9,7 @@
 require 'roo'
 host = '127.0.0.1:3000'
 
-virus_file = Roo::Excelx.new("/Users/yingwang/Documents/init_virus_data.xlsx")
+virus_file = Roo::Excelx.new("/opt/virus-backend/manage-backend/db/init_virus_data.xlsx")
 
 virus_file.default_sheet = virus_file.sheets.first
 
