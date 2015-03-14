@@ -1,3 +1,4 @@
+#encoding: utf-8
 require 'rails_admin/config/actions'
 require 'rails_admin/config/actions/base'
 
@@ -24,14 +25,16 @@ module RailsAdmin
                             Rails.logger.info all_viri
                             max_version = Package.maximum("version")
                             if max_version.nil?
-                                max_version = 0
+                                max_version = -1
                             end
-                            filename = 'viri-' + max_version.to_s
+			    new_version = max_version + 1
+                            filename = 'viri-' + new_version.to_s + '.json'
                             filepath = Rails.root.join('public','data-package',filename)
                             open(filepath,'w') do |file|
                                 file.puts all_viri.to_json
                             end
-                            Package.create({:url=>'http://' + ManageBackend::HOST + '/data-package/' + filename, :version => max_version + 1})
+                            Package.create({:url=>'/data-package/' + filename, :version => new_version})
+                            flash[:success] = t('admin.flash.successful', name: '数据', action: t('admin.actions.generate_version.done'))
                             redirect_to back_or_index
                         end
                     end

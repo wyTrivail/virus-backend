@@ -7,5 +7,4 @@ class Virus < ActiveRecord::Base
     mount_uploader :avatar, AvatarUploader
     #attr_accessible :pic_url, :asset_cache, :remove_asset
 
-
 end

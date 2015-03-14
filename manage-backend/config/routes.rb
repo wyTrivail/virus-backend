@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get 'package/get_by_version'
 
   get 'virus/index'
+  get 'advisement/get_ad'
+  root 'virus#index'
 
-  devise_for :users
-  root to: "virus#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
