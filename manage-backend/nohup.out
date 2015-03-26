@@ -30804,3 +30804,9 @@ I, [2015-03-14T21:39:02.847021 #15756]  INFO -- : master process ready
 I, [2015-03-14T21:39:02.847625 #15759]  INFO -- : worker=0 spawned pid=15759
 I, [2015-03-14T21:39:02.847799 #15759]  INFO -- : Refreshing Gem list
 I, [2015-03-14T21:39:08.449712 #15759]  INFO -- : worker=0 ready
+E, [2015-03-23T15:17:14.889337 #15756] ERROR -- : worker=0 PID:15759 timeout (61s > 60s), killing
+E, [2015-03-23T15:17:14.893262 #15756] ERROR -- : reaped #<Process::Status: pid 15759 SIGKILL (signal 9)> worker=0
+I, [2015-03-23T15:17:14.893428 #15756]  INFO -- : worker=0 spawning...
+I, [2015-03-23T15:17:14.894599 #1127]  INFO -- : worker=0 spawned pid=1127
+I, [2015-03-23T15:17:14.894805 #1127]  INFO -- : Refreshing Gem list
+I, [2015-03-23T15:17:20.221490 #1127]  INFO -- : worker=0 ready
